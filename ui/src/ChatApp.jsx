@@ -1,13 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
-<<<<<<< HEAD
 import { Send, User, Loader, Globe, Shield, CheckCircle, XCircle, AlertTriangle, Upload, FileText, X, LogOut, BookOpen, Brain, MessageSquare } from 'lucide-react';
 import MessageFormatter from './components/MessageFormatter';
 import QuizGenerator from './components/QuizGenerator';
-=======
-import { Send, User, Loader, Globe, Shield, CheckCircle, XCircle, AlertTriangle, Upload, FileText, X, LogOut, BookOpen, Brain } from 'lucide-react';
-import MessageFormatter from './components/MessageFormatter';
->>>>>>> 2ceb379583fa816e24309372072fb6b128a7d7f9
 
 const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8000';
 
@@ -36,10 +31,7 @@ const LanguageBridgeLogo = ({ className = "w-6 h-6", color = "currentColor" }) =
 );
 
 const ChatApp = ({ currentUser, onLogout }) => {
-<<<<<<< HEAD
   const [activeTab, setActiveTab] = useState('chat');
-=======
->>>>>>> 2ceb379583fa816e24309372072fb6b128a7d7f9
   const [messages, setMessages] = useState([
     {
       id: 1,
@@ -232,7 +224,6 @@ const ChatApp = ({ currentUser, onLogout }) => {
   return (
     <div className="flex flex-col h-screen max-w-4xl mx-auto bg-gray-50">
       {/* Header */}
-<<<<<<< HEAD
       <div className="bg-white shadow-sm border-b">
         <div className="px-6 py-4">
           <div className="flex items-center justify-between">
@@ -291,49 +282,16 @@ const ChatApp = ({ currentUser, onLogout }) => {
             >
               <BookOpen className="w-4 h-4" />
               <span>Quiz Generator</span>
-=======
-      <div className="bg-white shadow-sm border-b px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
-              <LanguageBridgeLogo className="w-6 h-6" color="white" />
-            </div>
-            <div>
-              <h1 className="text-xl font-semibold text-gray-800">EdRoom Language Bridge</h1>
-              <p className="text-sm text-gray-500">
-                Welcome, {currentUser?.firstName || 'User'}! • Translation + Content Moderation
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center space-x-2">
-            <button
-              onClick={clearChat}
-              className="px-4 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
-            >
-              Clear Chat
-            </button>
-            <button
-              onClick={onLogout}
-              className="flex items-center space-x-2 px-4 py-2 text-sm bg-red-100 hover:bg-red-200 text-red-700 rounded-lg transition-colors"
-            >
-              <LogOut className="w-4 h-4" />
-              <span>Logout</span>
->>>>>>> 2ceb379583fa816e24309372072fb6b128a7d7f9
             </button>
           </div>
         </div>
       </div>
 
-<<<<<<< HEAD
       {/* Content Area */}
       {activeTab === 'chat' ? (
         <>
           {/* Messages Container */}
           <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4 custom-scrollbar">
-=======
-      {/* Messages Container */}
-      <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4 custom-scrollbar">
->>>>>>> 2ceb379583fa816e24309372072fb6b128a7d7f9
         {messages.map((message, index) => (
           <div
             key={message.id}
@@ -513,7 +471,6 @@ const ChatApp = ({ currentUser, onLogout }) => {
           }
         </div>
       </div>
-<<<<<<< HEAD
         </>
       ) : (
         /* Quiz Generator Tab */
@@ -521,8 +478,6 @@ const ChatApp = ({ currentUser, onLogout }) => {
           <QuizGenerator />
         </div>
       )}
-=======
->>>>>>> 2ceb379583fa816e24309372072fb6b128a7d7f9
     </div>
   );
 };

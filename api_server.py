@@ -22,10 +22,7 @@ load_dotenv()
 from Language_Bridge_Agent import process_with_moderation, translate_response_to_user_language, clean_formatting_for_translation
 from grader import grade_assignment_from_blob, validate_pdf_blob
 from explanation import EducationalAIAgent
-<<<<<<< HEAD
 from Quiz_Generation_Agent import create_quiz, get_quiz_requirements
-=======
->>>>>>> 2ceb379583fa816e24309372072fb6b128a7d7f9
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -114,7 +111,6 @@ class ChatResponse(BaseModel):
     timestamp: str
     error: Optional[str] = None
 
-<<<<<<< HEAD
 class QuizGenerationRequest(BaseModel):
     topic: str
     difficulty: str
@@ -128,8 +124,6 @@ class QuizGenerationResponse(BaseModel):
     details: Optional[List[str]] = None
     timestamp: str
 
-=======
->>>>>>> 2ceb379583fa816e24309372072fb6b128a7d7f9
 # Global variables for service status
 service_status = {
     "translation": "unknown",
@@ -712,7 +706,6 @@ async def status_check():
         "version": "2.0.0"
     }
 
-<<<<<<< HEAD
 @app.post("/api/quiz/generate", response_model=QuizGenerationResponse)
 async def generate_quiz(request: QuizGenerationRequest):
     """
@@ -779,8 +772,6 @@ async def get_quiz_requirements_endpoint():
             "timestamp": datetime.now().isoformat()
         }
 
-=======
->>>>>>> 2ceb379583fa816e24309372072fb6b128a7d7f9
 @app.post("/api/debug/translate")
 async def debug_translation(request: dict):
     """Debug endpoint for testing Arabic translation"""
@@ -829,11 +820,8 @@ if __name__ == "__main__":
     print("  🔧 Process: http://localhost:8000/api/process")
     print("  💬 Chat: http://localhost:8000/api/chat")
     print("  🎓 Explain: http://localhost:8000/api/explain")
-<<<<<<< HEAD
     print("  🎯 Quiz Generate: http://localhost:8000/api/quiz/generate")
     print("  📋 Quiz Requirements: http://localhost:8000/api/quiz/requirements")
-=======
->>>>>>> 2ceb379583fa816e24309372072fb6b128a7d7f9
     print("  📈 Status: http://localhost:8000/api/status")
     print()
     print("🎨 Frontend (React):")
