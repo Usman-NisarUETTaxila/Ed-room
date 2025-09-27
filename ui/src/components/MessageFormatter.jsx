@@ -15,6 +15,51 @@ import {
 } from 'lucide-react';
 
 const MessageFormatter = ({ message, isUser = false }) => {
+  // Utilities for structured formatting, JSON detection and code fences
+  const stripCodeFences = (text) => {
+    if (!text) return '';
+    const trimmed = text.trim();
+    // ```json ... ``` or ``` ... ```
+    if (trimmed.startsWith('```')) {
+      const firstLineEnd = trimmed.indexOf('\n');
+      const fenceLang = trimmed.slice(3, firstLineEnd > -1 ? firstLineEnd : undefined).trim().toLowerCase();
+      const inner = firstLineEnd > -1 ? trimmed.slice(firstLineEnd + 1) : '';
+      const withoutClosing = inner.endsWith('```') ? inner.slice(0, -3) : inner;
+      return withoutClosing.trim();
+    }
+    return trimmed;
+  };
+
+  const tryParseJSON = (text) => {
+    if (!text) return null;
+    // Normalize quotes
+    const normalized = text
+      .replace(/[\u201C\u201D]/g, '"')
+      .replace(/[\u2018\u2019]/g, "'");
+    try {
+      // Quick heuristic: must start with { or [
+      const t = normalized.trim();
+      if (!(t.startsWith('{') || t.startsWith('['))) return null;
+      return JSON.parse(t);
+    } catch (e) {
+      return null;
+    }
+  };
+
+  const renderJSONBlock = (obj) => {
+    let pretty = '';
+    try {
+      pretty = JSON.stringify(obj, null, 2);
+    } catch {
+      pretty = String(obj);
+    }
+    return (
+      <pre className="text-xs md:text-sm leading-relaxed whitespace-pre-wrap bg-gray-50 border border-gray-200 rounded-md p-3 overflow-x-auto">
+        {pretty}
+      </pre>
+    );
+  };
+
   // Function to parse and format text with markdown-like syntax
   const formatText = (text) => {
     if (!text) return '';
@@ -23,22 +68,30 @@ const MessageFormatter = ({ message, isUser = false }) => {
     const sections = text.split('\n\n');
     
     return sections.map((section, sectionIndex) => {
-      // Split each section by single newlines
+      // If the whole section looks like JSON (possibly inside code fences), pretty print it
+      const candidate = stripCodeFences(section);
+      const parsed = tryParseJSON(candidate);
+      if (parsed !== null) {
+        return (
+          <div key={sectionIndex} className={sectionIndex > 0 ? 'mt-4' : ''}>
+            {renderJSONBlock(parsed)}
+          </div>
+        );
+      }
+
+      // Otherwise, split each section by single newlines
       const lines = section.split('\n');
-      
+
       return (
         <div key={sectionIndex} className={sectionIndex > 0 ? 'mt-4' : ''}>
           {lines.map((line, lineIndex) => {
-            // Skip empty lines
             if (!line.trim()) return null;
-            
-            // Check if line starts with separator (===)
+
+            // Horizontal separator
             if (line.trim().startsWith('===')) {
-              return (
-                <div key={lineIndex} className="my-4 border-t border-gray-200"></div>
-              );
+              return <div key={lineIndex} className="my-4 border-t border-gray-200"></div>;
             }
-            
+
             return (
               <div key={lineIndex} className={lineIndex > 0 ? 'mt-2' : ''}>
                 {formatLine(line)}
@@ -52,11 +105,28 @@ const MessageFormatter = ({ message, isUser = false }) => {
 
   // Function to format individual lines with bold, emojis, and special formatting
   const formatLine = (line) => {
-    // Handle different types of lines
+    const trimmed = line.trim();
+
+    // Simple list items: - item or * item
+    if (/^[-*]\s+/.test(trimmed)) {
+      return (
+        <div className="text-sm leading-relaxed flex">
+          <span className="mr-2">•</span>
+          <span>{trimmed.replace(/^[-*]\s+/, '')}</span>
+        </div>
+      );
+    }
+
+    // Headings: lines that end with a colon and are reasonably short
+    if (/^[^:]{2,80}:$/.test(trimmed)) {
+      return <div className="text-sm md:text-base font-semibold text-gray-800 mt-3">{trimmed}</div>;
+    }
+
+    // Markdown-like bold support
     if (line.includes('**') || line.includes('*')) {
       return formatWithMarkdown(line);
     }
-    
+
     return <span className="text-sm leading-relaxed">{line}</span>;
   };
 

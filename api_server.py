@@ -23,6 +23,7 @@ from Language_Bridge_Agent import process_with_moderation, translate_response_to
 from grader import grade_assignment_from_blob, validate_pdf_blob
 from explanation import EducationalAIAgent
 from Quiz_Generation_Agent import create_quiz, get_quiz_requirements
+from backend_cache import cache_instance
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -366,6 +367,7 @@ async def process_text(request: TextProcessRequest):
 async def chat_endpoint(request: ChatMessage):
     """
     Intelligent chatbot endpoint with AI-powered intent classification for grading and educational explanations
+    Enhanced with backend caching for improved offline resilience
     """
     try:
         logger.info(f"💬 Chat request from user: {request.user_id}")
@@ -380,6 +382,28 @@ async def chat_endpoint(request: ChatMessage):
                 timestamp=datetime.now().isoformat(),
                 error="Empty input"
             )
+        
+        # Check cache first (only for text messages without PDF)
+        cache_key_message = request.message or ""
+        has_pdf = bool(request.pdf_file)
+        
+        if cache_key_message.strip() and not has_pdf:
+            cached_response = cache_instance.get(cache_key_message, has_pdf=False)
+            if cached_response:
+                logger.info(f"✅ Cache hit for message: {cache_key_message[:50]}...")
+                # Add cache annotation to response
+                cached_bot_response = f"**[Cached Response]** {cached_response['bot_response']}"
+                return ChatResponse(
+                    success=cached_response.get('success', True),
+                    user_message=cache_key_message,
+                    bot_response=cached_bot_response,
+                    translation_info=cached_response.get('translation_info'),
+                    moderation_info=None,
+                    grading_result=None,
+                    explanation_result=cached_response.get('explanation_result'),
+                    final_approved=cached_response.get('final_approved', True),
+                    timestamp=datetime.now().isoformat()
+                )
         
         # Initialize response components
         translation_info = None
@@ -630,6 +654,23 @@ async def chat_endpoint(request: ChatMessage):
         logger.info(f"Sending final response with length: {len(final_bot_response)} characters")
         logger.info(f"Final response starts with: {final_bot_response[:50]}...")
         
+        # Prepare response data
+        response_data = {
+            'success': True,
+            'bot_response': final_bot_response,
+            'translation_info': translation_info,
+            'explanation_result': explanation_result,
+            'final_approved': final_approved
+        }
+        
+        # Cache successful response (only for text messages without PDF)
+        if cache_key_message.strip() and not has_pdf and final_approved:
+            try:
+                cache_instance.put(cache_key_message, response_data, has_pdf=False)
+                logger.debug(f"✅ Response cached for: {cache_key_message[:50]}...")
+            except Exception as cache_error:
+                logger.warning(f"Failed to cache response: {cache_error}")
+        
         return ChatResponse(
             success=True,
             user_message=request.message or "PDF file uploaded",
@@ -644,9 +685,49 @@ async def chat_endpoint(request: ChatMessage):
             
     except Exception as e:
         logger.error(f"❌ Chat endpoint error: {e}")
+        
+        # Try to provide a cached or fallback response on error
+        fallback_message = request.message or "PDF file uploaded"
+        try:
+            if fallback_message.strip() and not has_pdf:
+                # Try cache first
+                cached_response = cache_instance.get(fallback_message, has_pdf=False)
+                if cached_response:
+                    logger.info(f"🔄 Using cached response as fallback for error")
+                    fallback_bot_response = f"**[Cached Fallback]** Service temporarily unavailable. Here's a previous response:\n\n{cached_response['bot_response']}"
+                    return ChatResponse(
+                        success=True,
+                        user_message=fallback_message,
+                        bot_response=fallback_bot_response,
+                        translation_info=cached_response.get('translation_info'),
+                        moderation_info=None,
+                        grading_result=None,
+                        explanation_result=cached_response.get('explanation_result'),
+                        final_approved=cached_response.get('final_approved', True),
+                        timestamp=datetime.now().isoformat()
+                    )
+                
+                # Generate structured fallback response
+                fallback_response = cache_instance.get_fallback_response(fallback_message, "service_error")
+                logger.info(f"🔄 Using structured fallback response")
+                return ChatResponse(
+                    success=True,
+                    user_message=fallback_message,
+                    bot_response=fallback_response['bot_response'],
+                    translation_info=None,
+                    moderation_info=None,
+                    grading_result=None,
+                    explanation_result=None,
+                    final_approved=True,
+                    timestamp=datetime.now().isoformat()
+                )
+        except Exception as fallback_error:
+            logger.error(f"Fallback response generation failed: {fallback_error}")
+        
+        # Last resort error response
         return ChatResponse(
             success=False,
-            user_message=request.message or "PDF file uploaded",
+            user_message=fallback_message,
             bot_response="Sorry, I'm experiencing technical difficulties. Please try again later.",
             final_approved=False,
             timestamp=datetime.now().isoformat(),
@@ -698,13 +779,33 @@ async def explain_topic(request: ExplanationRequest):
 
 @app.get("/api/status")
 async def status_check():
-    """Detailed status check endpoint"""
+    """Detailed status check endpoint with cache statistics"""
+    cache_stats = cache_instance.get_stats()
     return {
         "status": "operational",
         "services": service_status,
+        "cache": cache_stats,
         "timestamp": datetime.now().isoformat(),
         "version": "2.0.0"
     }
+
+@app.post("/api/cache/clear")
+async def clear_cache():
+    """Clear the backend cache (admin endpoint)"""
+    try:
+        cache_instance.clear()
+        return {
+            "success": True,
+            "message": "Cache cleared successfully",
+            "timestamp": datetime.now().isoformat()
+        }
+    except Exception as e:
+        logger.error(f"Failed to clear cache: {e}")
+        return {
+            "success": False,
+            "error": str(e),
+            "timestamp": datetime.now().isoformat()
+        }
 
 @app.post("/api/quiz/generate", response_model=QuizGenerationResponse)
 async def generate_quiz(request: QuizGenerationRequest):

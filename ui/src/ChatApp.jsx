@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
+import { putToCache, getFromCache, getCannedResponse, annotateOffline } from './utils/offlineCache';
 import { Send, User, Loader, Globe, Shield, CheckCircle, XCircle, AlertTriangle, Upload, FileText, X, LogOut, BookOpen, Brain, MessageSquare } from 'lucide-react';
 import MessageFormatter from './components/MessageFormatter';
 import QuizGenerator from './components/QuizGenerator';
@@ -158,7 +159,14 @@ const ChatApp = ({ currentUser, onLogout }) => {
         console.log('API Response:', output);
         console.log('Bot response text:', output.bot_response);
         console.log('Bot response length:', output.bot_response ? output.bot_response.length : 0);
-        
+
+        // Save successful response to offline cache
+        try {
+          putToCache(currentMessage, output);
+        } catch (e) {
+          console.debug('Cache save skipped:', e);
+        }
+
         const botMessage = {
           id: Date.now() + 1,
           text: output.bot_response || 'No response received',
@@ -187,15 +195,27 @@ const ChatApp = ({ currentUser, onLogout }) => {
       }
     } catch (error) {
       console.error('Error getting AI response:', error);
-      const errText = error?.response?.data?.detail || error?.message || 'Sorry, I encountered an error. Please try again.';
-      const errorMessage = {
+
+      // Attempt offline cache first
+      let offline = null;
+      try {
+        offline = getFromCache(currentMessage);
+      } catch (e) {
+        offline = null;
+      }
+
+      let fallback = offline || getCannedResponse(currentMessage);
+      const botText = annotateOffline(fallback.bot_response);
+
+      const offlineMessage = {
         id: Date.now() + 1,
-        text: `❌ Error: ${errText}`,
+        text: botText,
         sender: 'bot',
         timestamp: new Date().toLocaleTimeString(),
-        isError: true
+        isError: false,
+        explanation_result: fallback.explanation_result || null,
       };
-      setMessages(prev => [...prev, errorMessage]);
+      setMessages(prev => [...prev, offlineMessage]);
     } finally {
       setIsLoading(false);
     }
