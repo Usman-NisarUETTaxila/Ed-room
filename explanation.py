@@ -72,7 +72,7 @@ Remember: Your goal is to help users learn and understand, not just provide answ
             
             # Make API call to OpenAI
             response = self.client.chat.completions.create(
-                model="gpt-3.5-turbo",  # You can change to "gpt-4" for better responses
+                model="gpt-4o",  # You can change to "gpt-4" for better responses
                 messages=messages,
                 max_tokens=1500,
                 temperature=0.7,
