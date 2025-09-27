@@ -1,0 +1,45 @@
+# Language Bridge Agent + Content Moderation Agent - Claude Edition
+# Dependencies for LangGraph-based translation and content moderation with FastAPI backend
+
+# Core LangGraph and LangChain dependencies
+langgraph>=0.0.40
+langchain>=0.1.0
+langchain-core>=0.1.0
+
+# Google Cloud Translation API (Official)
+google-cloud-translate>=3.12.0
+
+# OpenAI for content moderation
+langchain-openai>=0.1.0
+openai>=1.0.0
+
+# FastAPI backend dependencies
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.0.0
+
+# Environment variables management
+python-dotenv>=1.0.0
+
+# Type hints and utilities
+typing-extensions>=4.5.0
+
+# Optional: For enhanced logging and debugging
+colorlog>=6.7.0
+
+pydantic>=2.0.0
+
+# PDF processing (keeping original approach)
+pdfplumber>=0.9.0
+pytesseract>=0.3.10
+Pillow>=10.0.0
+
+# Google AI
+google-generativeai>=0.3.0
+
+# JSON parsing utilities
+regex>=2023.0.0
+
+# Optional but recommended
+tiktoken>=0.5.0
+
