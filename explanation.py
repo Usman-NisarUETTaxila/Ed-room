@@ -72,8 +72,9 @@ Remember: Your goal is to help users learn and understand, not just provide answ
             
             # Make API call to OpenAI
             response = self.client.chat.completions.create(
-                model="gpt-4o", 
+                model="gpt-3.5-turbo",  # You can change to "gpt-4" for better responses
                 messages=messages,
+                max_tokens=1500,
                 temperature=0.7,
                 top_p=1.0,
                 frequency_penalty=0.0,
@@ -83,6 +84,7 @@ Remember: Your goal is to help users learn and understand, not just provide answ
             # Extract the response
             explanation = response.choices[0].message.content.strip()
             
+            # Update conversation history
             self.conversation_history.append({"role": "user", "content": user_input})
             self.conversation_history.append({"role": "assistant", "content": explanation})
             

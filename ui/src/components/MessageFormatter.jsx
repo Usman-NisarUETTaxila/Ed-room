@@ -335,7 +335,20 @@ const MessageFormatter = ({ message, isUser = false }) => {
         {formatText(cleanedText)}
       </div>
       
-      {/* Learn More section removed */}
+      {/* Enhanced explanation display with multilingual support */}
+      {message.explanation_result && (
+        <div className={`mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg ${hasArabicText ? 'text-right' : 'text-left'}`} dir={textDirection}>
+          <div className={`flex items-center space-x-2 mb-3 ${hasArabicText ? 'justify-end space-x-reverse' : 'justify-start'}`}>
+            <BookOpen className="w-5 h-5 text-blue-600" />
+            <span className="text-base font-medium text-blue-800">
+              {hasArabicText ? 'تعلم المزيد' : 'Learn More'}
+            </span>
+          </div>
+          <div className="text-sm text-blue-700 leading-relaxed" dir={textDirection}>
+            {message.explanation_result.explanation}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
