@@ -1,0 +1,788 @@
+{
+  "formId": "1ze5FzNdVvFFdxhw6LqixKw-rpyw1VuoX4MvSJUhS-88",
+  "responderUri": "https://docs.google.com/forms/d/e/1FAIpQLSeycqtGG6rNhYrRrYkGXr13VF-U4LT8_ufVEKbE_KzgZjH-8A/viewform",
+  "created": {
+    "formId": "1ze5FzNdVvFFdxhw6LqixKw-rpyw1VuoX4MvSJUhS-88",
+    "info": {
+      "title": "Auto Quiz: atmospher (medium)",
+      "description": "Auto-generated quiz on atmospher at medium difficulty.",
+      "documentTitle": "Untitled form"
+    },
+    "settings": {
+      "quizSettings": {
+        "isQuiz": true
+      },
+      "emailCollectionType": "DO_NOT_COLLECT"
+    },
+    "revisionId": "00000005",
+    "responderUri": "https://docs.google.com/forms/d/e/1FAIpQLSeycqtGG6rNhYrRrYkGXr13VF-U4LT8_ufVEKbE_KzgZjH-8A/viewform",
+    "items": [
+      {
+        "itemId": "58254670",
+        "title": "What is the primary gas found in the Earth's atmosphere?",
+        "description": "Nitrogen makes up about 78% of the Earth's atmosphere.",
+        "questionItem": {
+          "question": {
+            "questionId": "0604f93d",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Nitrogen"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Nitrogen"
+                },
+                {
+                  "value": "Oxygen"
+                },
+                {
+                  "value": "Carbon Dioxide"
+                },
+                {
+                  "value": "Argon"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "3a75092d",
+        "title": "Which layer of the atmosphere contains the ozone layer?",
+        "description": "The ozone layer is located in the stratosphere, which absorbs and scatters ultraviolet solar radiation.",
+        "questionItem": {
+          "question": {
+            "questionId": "24535e5d",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Stratosphere"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Troposphere"
+                },
+                {
+                  "value": "Stratosphere"
+                },
+                {
+                  "value": "Mesosphere"
+                },
+                {
+                  "value": "Thermosphere"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "089800fa",
+        "title": "What phenomenon is responsible for the blue color of the sky?",
+        "description": "Rayleigh scattering occurs when sunlight interacts with air molecules, scattering shorter blue wavelengths more than others.",
+        "questionItem": {
+          "question": {
+            "questionId": "07e5d40f",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Rayleigh scattering"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Rayleigh scattering"
+                },
+                {
+                  "value": "Mie scattering"
+                },
+                {
+                  "value": "Refraction"
+                },
+                {
+                  "value": "Reflection"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "280a1e24",
+        "title": "Which gas is primarily responsible for the greenhouse effect?",
+        "description": "Carbon dioxide is a significant greenhouse gas that traps heat in the atmosphere.",
+        "questionItem": {
+          "question": {
+            "questionId": "66c0320e",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Carbon Dioxide"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Oxygen"
+                },
+                {
+                  "value": "Nitrogen"
+                },
+                {
+                  "value": "Carbon Dioxide"
+                },
+                {
+                  "value": "Hydrogen"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "5d3c73bc",
+        "title": "What is the term for the boundary between the troposphere and the stratosphere?",
+        "description": "The tropopause is the boundary layer that separates the troposphere from the stratosphere.",
+        "questionItem": {
+          "question": {
+            "questionId": "4bbe6286",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Tropopause"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Tropopause"
+                },
+                {
+                  "value": "Stratopause"
+                },
+                {
+                  "value": "Mesopause"
+                },
+                {
+                  "value": "Thermopause"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "0627b77d",
+        "title": "Which atmospheric layer is closest to the Earth's surface?",
+        "description": "The troposphere is the lowest layer of the atmosphere, where most weather events occur.",
+        "questionItem": {
+          "question": {
+            "questionId": "4705f636",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Troposphere"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Stratosphere"
+                },
+                {
+                  "value": "Troposphere"
+                },
+                {
+                  "value": "Mesosphere"
+                },
+                {
+                  "value": "Thermosphere"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "1a2fbb99",
+        "title": "What is the main cause of wind?",
+        "description": "Wind is primarily caused by differences in air pressure, which are influenced by temperature variations.",
+        "questionItem": {
+          "question": {
+            "questionId": "681b69e5",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Air pressure differences"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Earth's rotation"
+                },
+                {
+                  "value": "Temperature differences"
+                },
+                {
+                  "value": "Humidity levels"
+                },
+                {
+                  "value": "Air pressure differences"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "21b05438",
+        "title": "What is the term for the process by which water vapor turns into liquid water?",
+        "description": "Condensation is the process where water vapor cools and changes back into liquid form.",
+        "questionItem": {
+          "question": {
+            "questionId": "2ef80c63",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Condensation"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Evaporation"
+                },
+                {
+                  "value": "Condensation"
+                },
+                {
+                  "value": "Precipitation"
+                },
+                {
+                  "value": "Sublimation"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "7f6ca0af",
+        "title": "Which of the following is a characteristic of the thermosphere?",
+        "description": "The thermosphere contains the ionosphere, which is important for radio communication.",
+        "questionItem": {
+          "question": {
+            "questionId": "3a174ff4",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "It contains the ionosphere"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "It is the coldest layer"
+                },
+                {
+                  "value": "It contains the ionosphere"
+                },
+                {
+                  "value": "It is where weather occurs"
+                },
+                {
+                  "value": "It has the highest density"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "526df36b",
+        "title": "What is the primary source of energy that drives atmospheric processes?",
+        "description": "Solar radiation is the main source of energy that influences weather and climate systems in the atmosphere.",
+        "questionItem": {
+          "question": {
+            "questionId": "6d21a6bf",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Solar radiation"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "The Moon"
+                },
+                {
+                  "value": "Earth's core"
+                },
+                {
+                  "value": "Solar radiation"
+                },
+                {
+                  "value": "Geothermal energy"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "1c0e5bd8",
+        "title": "What is the effect called when warm air rises and cool air sinks?",
+        "description": "Convection is the process of heat transfer through the movement of fluids, like air.",
+        "questionItem": {
+          "question": {
+            "questionId": "2612ff50",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Convection"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Convection"
+                },
+                {
+                  "value": "Conduction"
+                },
+                {
+                  "value": "Radiation"
+                },
+                {
+                  "value": "Advection"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "35ec2a93",
+        "title": "Which gas is produced by the combustion of fossil fuels?",
+        "description": "Carbon dioxide is a byproduct of burning fossil fuels, contributing to greenhouse gas emissions.",
+        "questionItem": {
+          "question": {
+            "questionId": "6346f4f6",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Carbon Dioxide"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Oxygen"
+                },
+                {
+                  "value": "Nitrogen"
+                },
+                {
+                  "value": "Carbon Dioxide"
+                },
+                {
+                  "value": "Methane"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "7d62f24c",
+        "title": "What is the term for a large-scale atmospheric circulation pattern?",
+        "description": "Trade winds are a major component of global atmospheric circulation, affecting weather patterns.",
+        "questionItem": {
+          "question": {
+            "questionId": "1632776c",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Trade winds"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Jet stream"
+                },
+                {
+                  "value": "Trade winds"
+                },
+                {
+                  "value": "Monsoon"
+                },
+                {
+                  "value": "Cyclone"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "7a540f0a",
+        "title": "Which layer of the atmosphere is where most of the Earth's weather occurs?",
+        "description": "The troposphere is where nearly all weather events take place due to its proximity to the Earth's surface.",
+        "questionItem": {
+          "question": {
+            "questionId": "0adbf5bf",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Troposphere"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Stratosphere"
+                },
+                {
+                  "value": "Troposphere"
+                },
+                {
+                  "value": "Mesosphere"
+                },
+                {
+                  "value": "Exosphere"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "2cfc6964",
+        "title": "What is the primary function of the ozone layer?",
+        "description": "The ozone layer absorbs the majority of the sun's harmful ultraviolet radiation.",
+        "questionItem": {
+          "question": {
+            "questionId": "0f082228",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "To absorb UV radiation"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "To provide oxygen"
+                },
+                {
+                  "value": "To absorb UV radiation"
+                },
+                {
+                  "value": "To regulate temperature"
+                },
+                {
+                  "value": "To trap greenhouse gases"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "10400499",
+        "title": "What type of cloud is typically associated with thunderstorms?",
+        "description": "Cumulonimbus clouds are large, towering clouds that can produce thunderstorms and severe weather.",
+        "questionItem": {
+          "question": {
+            "questionId": "0262970a",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Cumulonimbus"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Cumulus"
+                },
+                {
+                  "value": "Stratus"
+                },
+                {
+                  "value": "Cirrus"
+                },
+                {
+                  "value": "Cumulonimbus"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "05623479",
+        "title": "What is the primary reason for seasonal changes in weather?",
+        "description": "The tilt of the Earth's axis causes different parts of the planet to receive varying amounts of sunlight throughout the year.",
+        "questionItem": {
+          "question": {
+            "questionId": "7031a90c",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Tilt of the Earth's axis"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Earth's distance from the Sun"
+                },
+                {
+                  "value": "Tilt of the Earth's axis"
+                },
+                {
+                  "value": "Ocean currents"
+                },
+                {
+                  "value": "Volcanic activity"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "728ca325",
+        "title": "What is the term for the boundary between the stratosphere and the mesosphere?",
+        "description": "The mesopause is the boundary layer that separates the stratosphere from the mesosphere.",
+        "questionItem": {
+          "question": {
+            "questionId": "6bd26ec4",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Mesopause"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Stratopause"
+                },
+                {
+                  "value": "Mesopause"
+                },
+                {
+                  "value": "Tropopause"
+                },
+                {
+                  "value": "Thermopause"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "1a785eeb",
+        "title": "What is the primary cause of ocean currents?",
+        "description": "Wind is the primary driver of surface ocean currents, influenced by the Earth's rotation and the Coriolis effect.",
+        "questionItem": {
+          "question": {
+            "questionId": "0ddaa421",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Wind"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Wind"
+                },
+                {
+                  "value": "Earth's rotation"
+                },
+                {
+                  "value": "Salinity differences"
+                },
+                {
+                  "value": "Temperature differences"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "290d0586",
+        "title": "What type of precipitation occurs when water vapor freezes in the atmosphere?",
+        "description": "Snow forms when water vapor freezes into ice crystals in the atmosphere.",
+        "questionItem": {
+          "question": {
+            "questionId": "57c6f64a",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Snow"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Rain"
+                },
+                {
+                  "value": "Snow"
+                },
+                {
+                  "value": "Sleet"
+                },
+                {
+                  "value": "Hail"
+                }
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "publishSettings": {
+      "publishState": {
+        "isPublished": true,
+        "isAcceptingResponses": true
+      }
+    }
+  }
+}

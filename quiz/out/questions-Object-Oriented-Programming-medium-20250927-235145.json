@@ -1,0 +1,242 @@
+[
+  {
+    "question": "What is the main purpose of encapsulation in object-oriented programming?",
+    "options": [
+      "To restrict access to certain components",
+      "To allow multiple inheritance",
+      "To improve performance",
+      "To enable polymorphism"
+    ],
+    "answer_index": 0,
+    "explanation": "Encapsulation restricts access to certain components of an object, allowing for controlled interaction.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which of the following is NOT a characteristic of object-oriented programming?",
+    "options": [
+      "Inheritance",
+      "Polymorphism",
+      "Abstraction",
+      "Compilation"
+    ],
+    "answer_index": 3,
+    "explanation": "Compilation is a process of converting code into machine language, not a characteristic of OOP.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "In a class definition, which keyword is used to create a new instance of the class?",
+    "options": [
+      "create",
+      "new",
+      "instance",
+      "object"
+    ],
+    "answer_index": 1,
+    "explanation": "The 'new' keyword is used in many programming languages to create a new instance of a class.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What is polymorphism in the context of OOP?",
+    "options": [
+      "The ability to create multiple classes",
+      "The ability to define methods in multiple ways",
+      "The ability to inherit properties",
+      "The ability to encapsulate data"
+    ],
+    "answer_index": 1,
+    "explanation": "Polymorphism allows methods to be defined in multiple ways, enabling different behaviors based on the object.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which of the following best describes inheritance?",
+    "options": [
+      "A way to create a new class from an existing class",
+      "A method to hide data",
+      "A technique to combine multiple classes",
+      "A way to define abstract classes"
+    ],
+    "answer_index": 0,
+    "explanation": "Inheritance allows a new class to inherit properties and methods from an existing class.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What does the 'this' keyword refer to in a class method?",
+    "options": [
+      "The current instance of the class",
+      "The parent class",
+      "A static method",
+      "An object of a different class"
+    ],
+    "answer_index": 0,
+    "explanation": "'this' refers to the current instance of the class within which it is used.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which of the following is an example of an abstract class?",
+    "options": [
+      "A class that cannot be instantiated",
+      "A class with no methods",
+      "A class that has only static methods",
+      "A class that implements all methods"
+    ],
+    "answer_index": 0,
+    "explanation": "An abstract class cannot be instantiated directly and often contains abstract methods that must be implemented by subclasses.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What is the purpose of a constructor in a class?",
+    "options": [
+      "To destruct an object",
+      "To initialize an object",
+      "To define methods",
+      "To create a subclass"
+    ],
+    "answer_index": 1,
+    "explanation": "A constructor is used to initialize an object when it is created.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which of the following concepts allows different classes to be treated as instances of the same class through a common interface?",
+    "options": [
+      "Abstraction",
+      "Encapsulation",
+      "Inheritance",
+      "Polymorphism"
+    ],
+    "answer_index": 3,
+    "explanation": "Polymorphism allows different classes to be treated as instances of the same class through a common interface.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What will happen if a subclass does not implement an abstract method from its superclass?",
+    "options": [
+      "The subclass will compile successfully",
+      "The subclass will not compile",
+      "The superclass will be modified",
+      "The method will be inherited as is"
+    ],
+    "answer_index": 1,
+    "explanation": "If a subclass does not implement an abstract method, it will not compile unless it is declared abstract itself.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which of the following statements about interfaces is true?",
+    "options": [
+      "Interfaces can contain implementation",
+      "A class can implement multiple interfaces",
+      "Interfaces cannot be inherited",
+      "Interfaces are the same as abstract classes"
+    ],
+    "answer_index": 1,
+    "explanation": "A class can implement multiple interfaces, allowing for a form of multiple inheritance.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What is method overloading?",
+    "options": [
+      "Using the same method name with different parameters",
+      "Changing the method name",
+      "Creating a method in a subclass",
+      "Using methods from different classes"
+    ],
+    "answer_index": 0,
+    "explanation": "Method overloading allows multiple methods with the same name but different parameter lists in the same class.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which of the following is an example of encapsulation?",
+    "options": [
+      "Using private variables with public methods",
+      "Creating multiple classes",
+      "Defining abstract methods",
+      "Inheriting from a base class"
+    ],
+    "answer_index": 0,
+    "explanation": "Encapsulation is achieved by using private variables and providing public methods to access them.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What does the term 'constructor overloading' refer to?",
+    "options": [
+      "Having multiple constructors with different parameters",
+      "Changing the constructor name",
+      "Using a constructor in a subclass",
+      "Creating a constructor in an interface"
+    ],
+    "answer_index": 0,
+    "explanation": "Constructor overloading refers to having multiple constructors in a class with different parameter lists.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which principle of OOP allows for the hiding of implementation details?",
+    "options": [
+      "Abstraction",
+      "Encapsulation",
+      "Inheritance",
+      "Polymorphism"
+    ],
+    "answer_index": 1,
+    "explanation": "Encapsulation allows for the hiding of implementation details by restricting access to certain components.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What is the difference between an interface and an abstract class?",
+    "options": [
+      "An interface can have method implementations",
+      "An abstract class cannot have any methods",
+      "An interface cannot have any fields",
+      "An abstract class can have both abstract and concrete methods"
+    ],
+    "answer_index": 3,
+    "explanation": "An abstract class can have both abstract and concrete methods, while an interface can only declare methods without implementations.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which of the following is a feature of polymorphism?",
+    "options": [
+      "Method overriding",
+      "Method hiding",
+      "Static binding",
+      "Data hiding"
+    ],
+    "answer_index": 0,
+    "explanation": "Method overriding is a feature of polymorphism that allows a subclass to provide a specific implementation of a method already defined in its superclass.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What is the role of a destructor in a class?",
+    "options": [
+      "To initialize an object",
+      "To clean up resources before an object is destroyed",
+      "To define methods",
+      "To create a subclass"
+    ],
+    "answer_index": 1,
+    "explanation": "A destructor is called when an object is destroyed to clean up resources that the object may have acquired during its lifetime.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which of the following is true about static methods?",
+    "options": [
+      "They can access instance variables",
+      "They can be called without an instance of the class",
+      "They cannot be overridden",
+      "They can only be private"
+    ],
+    "answer_index": 1,
+    "explanation": "Static methods can be called without creating an instance of the class, as they belong to the class itself.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What is the purpose of the 'final' keyword in Java?",
+    "options": [
+      "To declare a constant",
+      "To prevent method overriding",
+      "To prevent inheritance",
+      "All of the above"
+    ],
+    "answer_index": 3,
+    "explanation": "The 'final' keyword can be used to declare constants, prevent method overriding, and prevent inheritance.",
+    "difficulty": "medium"
+  }
+]

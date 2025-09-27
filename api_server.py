@@ -22,6 +22,10 @@ load_dotenv()
 from Language_Bridge_Agent import process_with_moderation, translate_response_to_user_language, clean_formatting_for_translation
 from grader import grade_assignment_from_blob, validate_pdf_blob
 from explanation import EducationalAIAgent
+<<<<<<< HEAD
+from Quiz_Generation_Agent import create_quiz, get_quiz_requirements
+=======
+>>>>>>> 2ceb379583fa816e24309372072fb6b128a7d7f9
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -110,6 +114,22 @@ class ChatResponse(BaseModel):
     timestamp: str
     error: Optional[str] = None
 
+<<<<<<< HEAD
+class QuizGenerationRequest(BaseModel):
+    topic: str
+    difficulty: str
+    user_id: Optional[str] = "anonymous"
+
+class QuizGenerationResponse(BaseModel):
+    success: bool
+    quiz_info: Optional[Dict[str, Any]] = None
+    message: Optional[str] = None
+    error: Optional[str] = None
+    details: Optional[List[str]] = None
+    timestamp: str
+
+=======
+>>>>>>> 2ceb379583fa816e24309372072fb6b128a7d7f9
 # Global variables for service status
 service_status = {
     "translation": "unknown",
@@ -692,6 +712,75 @@ async def status_check():
         "version": "2.0.0"
     }
 
+<<<<<<< HEAD
+@app.post("/api/quiz/generate", response_model=QuizGenerationResponse)
+async def generate_quiz(request: QuizGenerationRequest):
+    """
+    Generate a quiz on Google Forms based on topic and difficulty
+    """
+    try:
+        logger.info(f"🎯 Quiz generation request from user: {request.user_id} for topic: '{request.topic}', difficulty: '{request.difficulty}'")
+        
+        # Validate input
+        if not request.topic or not request.topic.strip():
+            raise HTTPException(status_code=400, detail="Topic is required and cannot be empty")
+        
+        if not request.difficulty or request.difficulty.lower() not in ["easy", "medium", "hard"]:
+            raise HTTPException(status_code=400, detail="Difficulty must be one of: easy, medium, hard")
+        
+        if len(request.topic) > 100:
+            raise HTTPException(status_code=400, detail="Topic must be 100 characters or less")
+        
+        # Generate the quiz
+        result = create_quiz(request.topic.strip(), request.difficulty.lower())
+        
+        if result["success"]:
+            logger.info(f"✅ Quiz generated successfully: {result.get('quiz_info', {}).get('form_id', 'Unknown ID')}")
+        else:
+            logger.error(f"❌ Quiz generation failed: {result.get('error', 'Unknown error')}")
+        
+        return QuizGenerationResponse(
+            success=result["success"],
+            quiz_info=result.get("quiz_info"),
+            message=result.get("message"),
+            error=result.get("error"),
+            details=result.get("details"),
+            timestamp=datetime.now().isoformat()
+        )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"❌ Quiz generation endpoint error: {e}")
+        return QuizGenerationResponse(
+            success=False,
+            error="Internal server error",
+            details=[str(e)],
+            timestamp=datetime.now().isoformat()
+        )
+
+@app.get("/api/quiz/requirements")
+async def get_quiz_requirements_endpoint():
+    """
+    Get the requirements and specifications for quiz generation
+    """
+    try:
+        requirements = get_quiz_requirements()
+        return {
+            "success": True,
+            "requirements": requirements,
+            "timestamp": datetime.now().isoformat()
+        }
+    except Exception as e:
+        logger.error(f"❌ Quiz requirements endpoint error: {e}")
+        return {
+            "success": False,
+            "error": str(e),
+            "timestamp": datetime.now().isoformat()
+        }
+
+=======
+>>>>>>> 2ceb379583fa816e24309372072fb6b128a7d7f9
 @app.post("/api/debug/translate")
 async def debug_translation(request: dict):
     """Debug endpoint for testing Arabic translation"""
@@ -740,6 +829,11 @@ if __name__ == "__main__":
     print("  🔧 Process: http://localhost:8000/api/process")
     print("  💬 Chat: http://localhost:8000/api/chat")
     print("  🎓 Explain: http://localhost:8000/api/explain")
+<<<<<<< HEAD
+    print("  🎯 Quiz Generate: http://localhost:8000/api/quiz/generate")
+    print("  📋 Quiz Requirements: http://localhost:8000/api/quiz/requirements")
+=======
+>>>>>>> 2ceb379583fa816e24309372072fb6b128a7d7f9
     print("  📈 Status: http://localhost:8000/api/status")
     print()
     print("🎨 Frontend (React):")

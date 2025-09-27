@@ -1,0 +1,788 @@
+{
+  "formId": "16OSzAVe5aFr72mSh4zuBSNQekmT2jYZWYv0r2QmdsDU",
+  "responderUri": "https://docs.google.com/forms/d/e/1FAIpQLSd540HjRlpcH7AS3oOix7SR__JZzCzKGk_X_WF0ieZVcAKVdQ/viewform",
+  "created": {
+    "formId": "16OSzAVe5aFr72mSh4zuBSNQekmT2jYZWYv0r2QmdsDU",
+    "info": {
+      "title": "Auto Quiz: Object Oriented Programming (medium)",
+      "description": "Auto-generated quiz on Object Oriented Programming at medium difficulty.",
+      "documentTitle": "Untitled form"
+    },
+    "settings": {
+      "quizSettings": {
+        "isQuiz": true
+      },
+      "emailCollectionType": "DO_NOT_COLLECT"
+    },
+    "revisionId": "00000005",
+    "responderUri": "https://docs.google.com/forms/d/e/1FAIpQLSd540HjRlpcH7AS3oOix7SR__JZzCzKGk_X_WF0ieZVcAKVdQ/viewform",
+    "items": [
+      {
+        "itemId": "0ba25d87",
+        "title": "What is the main purpose of encapsulation in object-oriented programming?",
+        "description": "Encapsulation restricts access to certain components of an object, allowing for controlled interaction.",
+        "questionItem": {
+          "question": {
+            "questionId": "5c20018b",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "To restrict access to certain components"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "To restrict access to certain components"
+                },
+                {
+                  "value": "To allow multiple inheritance"
+                },
+                {
+                  "value": "To improve performance"
+                },
+                {
+                  "value": "To enable polymorphism"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "4e099340",
+        "title": "Which of the following is NOT a characteristic of object-oriented programming?",
+        "description": "Compilation is a process of converting code into machine language, not a characteristic of OOP.",
+        "questionItem": {
+          "question": {
+            "questionId": "67ca8e0e",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Compilation"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Inheritance"
+                },
+                {
+                  "value": "Polymorphism"
+                },
+                {
+                  "value": "Abstraction"
+                },
+                {
+                  "value": "Compilation"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "1eaa68b5",
+        "title": "In a class definition, which keyword is used to create a new instance of the class?",
+        "description": "The 'new' keyword is used in many programming languages to create a new instance of a class.",
+        "questionItem": {
+          "question": {
+            "questionId": "6e9f6c00",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "new"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "create"
+                },
+                {
+                  "value": "new"
+                },
+                {
+                  "value": "instance"
+                },
+                {
+                  "value": "object"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "0749e6d0",
+        "title": "What is polymorphism in the context of OOP?",
+        "description": "Polymorphism allows methods to be defined in multiple ways, enabling different behaviors based on the object.",
+        "questionItem": {
+          "question": {
+            "questionId": "567c68b6",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "The ability to define methods in multiple ways"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "The ability to create multiple classes"
+                },
+                {
+                  "value": "The ability to define methods in multiple ways"
+                },
+                {
+                  "value": "The ability to inherit properties"
+                },
+                {
+                  "value": "The ability to encapsulate data"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "6c8248cf",
+        "title": "Which of the following best describes inheritance?",
+        "description": "Inheritance allows a new class to inherit properties and methods from an existing class.",
+        "questionItem": {
+          "question": {
+            "questionId": "5d13311e",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "A way to create a new class from an existing class"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "A way to create a new class from an existing class"
+                },
+                {
+                  "value": "A method to hide data"
+                },
+                {
+                  "value": "A technique to combine multiple classes"
+                },
+                {
+                  "value": "A way to define abstract classes"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "5ab7837b",
+        "title": "What does the 'this' keyword refer to in a class method?",
+        "description": "'this' refers to the current instance of the class within which it is used.",
+        "questionItem": {
+          "question": {
+            "questionId": "4c69e2f8",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "The current instance of the class"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "The current instance of the class"
+                },
+                {
+                  "value": "The parent class"
+                },
+                {
+                  "value": "A static method"
+                },
+                {
+                  "value": "An object of a different class"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "6278dec8",
+        "title": "Which of the following is an example of an abstract class?",
+        "description": "An abstract class cannot be instantiated directly and often contains abstract methods that must be implemented by subclasses.",
+        "questionItem": {
+          "question": {
+            "questionId": "5af8bdd4",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "A class that cannot be instantiated"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "A class that cannot be instantiated"
+                },
+                {
+                  "value": "A class with no methods"
+                },
+                {
+                  "value": "A class that has only static methods"
+                },
+                {
+                  "value": "A class that implements all methods"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "1b0707a2",
+        "title": "What is the purpose of a constructor in a class?",
+        "description": "A constructor is used to initialize an object when it is created.",
+        "questionItem": {
+          "question": {
+            "questionId": "6067c721",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "To initialize an object"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "To destruct an object"
+                },
+                {
+                  "value": "To initialize an object"
+                },
+                {
+                  "value": "To define methods"
+                },
+                {
+                  "value": "To create a subclass"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "05b1a5f2",
+        "title": "Which of the following concepts allows different classes to be treated as instances of the same class through a common interface?",
+        "description": "Polymorphism allows different classes to be treated as instances of the same class through a common interface.",
+        "questionItem": {
+          "question": {
+            "questionId": "56d5b031",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Polymorphism"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Abstraction"
+                },
+                {
+                  "value": "Encapsulation"
+                },
+                {
+                  "value": "Inheritance"
+                },
+                {
+                  "value": "Polymorphism"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "6f73e5dc",
+        "title": "What will happen if a subclass does not implement an abstract method from its superclass?",
+        "description": "If a subclass does not implement an abstract method, it will not compile unless it is declared abstract itself.",
+        "questionItem": {
+          "question": {
+            "questionId": "59ee41b2",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "The subclass will not compile"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "The subclass will compile successfully"
+                },
+                {
+                  "value": "The subclass will not compile"
+                },
+                {
+                  "value": "The superclass will be modified"
+                },
+                {
+                  "value": "The method will be inherited as is"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "22134b78",
+        "title": "Which of the following statements about interfaces is true?",
+        "description": "A class can implement multiple interfaces, allowing for a form of multiple inheritance.",
+        "questionItem": {
+          "question": {
+            "questionId": "39c525bf",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "A class can implement multiple interfaces"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Interfaces can contain implementation"
+                },
+                {
+                  "value": "A class can implement multiple interfaces"
+                },
+                {
+                  "value": "Interfaces cannot be inherited"
+                },
+                {
+                  "value": "Interfaces are the same as abstract classes"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "1e479d4b",
+        "title": "What is method overloading?",
+        "description": "Method overloading allows multiple methods with the same name but different parameter lists in the same class.",
+        "questionItem": {
+          "question": {
+            "questionId": "70dd8851",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Using the same method name with different parameters"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Using the same method name with different parameters"
+                },
+                {
+                  "value": "Changing the method name"
+                },
+                {
+                  "value": "Creating a method in a subclass"
+                },
+                {
+                  "value": "Using methods from different classes"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "6ab0fc04",
+        "title": "Which of the following is an example of encapsulation?",
+        "description": "Encapsulation is achieved by using private variables and providing public methods to access them.",
+        "questionItem": {
+          "question": {
+            "questionId": "5d655579",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Using private variables with public methods"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Using private variables with public methods"
+                },
+                {
+                  "value": "Creating multiple classes"
+                },
+                {
+                  "value": "Defining abstract methods"
+                },
+                {
+                  "value": "Inheriting from a base class"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "79d2e509",
+        "title": "What does the term 'constructor overloading' refer to?",
+        "description": "Constructor overloading refers to having multiple constructors in a class with different parameter lists.",
+        "questionItem": {
+          "question": {
+            "questionId": "79b5c551",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Having multiple constructors with different parameters"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Having multiple constructors with different parameters"
+                },
+                {
+                  "value": "Changing the constructor name"
+                },
+                {
+                  "value": "Using a constructor in a subclass"
+                },
+                {
+                  "value": "Creating a constructor in an interface"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "5a6fa981",
+        "title": "Which principle of OOP allows for the hiding of implementation details?",
+        "description": "Encapsulation allows for the hiding of implementation details by restricting access to certain components.",
+        "questionItem": {
+          "question": {
+            "questionId": "39ba8f69",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Encapsulation"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Abstraction"
+                },
+                {
+                  "value": "Encapsulation"
+                },
+                {
+                  "value": "Inheritance"
+                },
+                {
+                  "value": "Polymorphism"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "09b0dcc0",
+        "title": "What is the difference between an interface and an abstract class?",
+        "description": "An abstract class can have both abstract and concrete methods, while an interface can only declare methods without implementations.",
+        "questionItem": {
+          "question": {
+            "questionId": "376df1d9",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "An abstract class can have both abstract and concrete methods"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "An interface can have method implementations"
+                },
+                {
+                  "value": "An abstract class cannot have any methods"
+                },
+                {
+                  "value": "An interface cannot have any fields"
+                },
+                {
+                  "value": "An abstract class can have both abstract and concrete methods"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "1f3aaafa",
+        "title": "Which of the following is a feature of polymorphism?",
+        "description": "Method overriding is a feature of polymorphism that allows a subclass to provide a specific implementation of a method already defined in its superclass.",
+        "questionItem": {
+          "question": {
+            "questionId": "32945be2",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "Method overriding"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "Method overriding"
+                },
+                {
+                  "value": "Method hiding"
+                },
+                {
+                  "value": "Static binding"
+                },
+                {
+                  "value": "Data hiding"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "6e5b7459",
+        "title": "What is the role of a destructor in a class?",
+        "description": "A destructor is called when an object is destroyed to clean up resources that the object may have acquired during its lifetime.",
+        "questionItem": {
+          "question": {
+            "questionId": "0ae5e8b3",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "To clean up resources before an object is destroyed"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "To initialize an object"
+                },
+                {
+                  "value": "To clean up resources before an object is destroyed"
+                },
+                {
+                  "value": "To define methods"
+                },
+                {
+                  "value": "To create a subclass"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "48af38a1",
+        "title": "Which of the following is true about static methods?",
+        "description": "Static methods can be called without creating an instance of the class, as they belong to the class itself.",
+        "questionItem": {
+          "question": {
+            "questionId": "15d31457",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "They can be called without an instance of the class"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "They can access instance variables"
+                },
+                {
+                  "value": "They can be called without an instance of the class"
+                },
+                {
+                  "value": "They cannot be overridden"
+                },
+                {
+                  "value": "They can only be private"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "itemId": "21195ccc",
+        "title": "What is the purpose of the 'final' keyword in Java?",
+        "description": "The 'final' keyword can be used to declare constants, prevent method overriding, and prevent inheritance.",
+        "questionItem": {
+          "question": {
+            "questionId": "0f2a9bb3",
+            "required": true,
+            "grading": {
+              "pointValue": 1,
+              "correctAnswers": {
+                "answers": [
+                  {
+                    "value": "All of the above"
+                  }
+                ]
+              }
+            },
+            "choiceQuestion": {
+              "type": "RADIO",
+              "options": [
+                {
+                  "value": "To declare a constant"
+                },
+                {
+                  "value": "To prevent method overriding"
+                },
+                {
+                  "value": "To prevent inheritance"
+                },
+                {
+                  "value": "All of the above"
+                }
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "publishSettings": {
+      "publishState": {
+        "isPublished": true,
+        "isAcceptingResponses": true
+      }
+    }
+  }
+}
