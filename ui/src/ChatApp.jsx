@@ -36,7 +36,7 @@ const ChatApp = ({ currentUser, onLogout }) => {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "🌍🛡️ Hello! I'm your Language Bridge Assistant with Content Moderation. I can translate text from any language to English and check if it's appropriate. Send me a message in any language or upload a PDF file for grading!",
+      text: "Hello! I'm your Companion in your studies. I can help you with your studies. Send me a message in any language or upload a PDF file for grading!",
       sender: 'bot',
       timestamp: new Date().toLocaleTimeString()
     }
@@ -232,7 +232,7 @@ const ChatApp = ({ currentUser, onLogout }) => {
     setMessages([
       {
         id: 1,
-        text: "🌍🛡️ Hello! I'm your Language Bridge Assistant with Content Moderation. I can translate text from any language to English and check if it's appropriate. Send me a message in any language or upload a PDF file for grading!",
+        text: "Hello! I'm your Companion in your studies. I can help you with your studies. Send me a message in any language or upload a PDF file for grading!",
         sender: 'bot',
         timestamp: new Date().toLocaleTimeString()
       }
@@ -252,9 +252,9 @@ const ChatApp = ({ currentUser, onLogout }) => {
                 <LanguageBridgeLogo className="w-6 h-6" color="white" />
               </div>
               <div>
-                <h1 className="text-xl font-semibold text-gray-800">EdRoom Language Bridge</h1>
+                <h1 className="text-xl font-semibold text-gray-800">EdRoom</h1>
                 <p className="text-sm text-gray-500">
-                  Welcome, {currentUser?.firstName || 'User'}! • AI-Powered Educational Tools
+                  Welcome, {currentUser?.firstName || 'User'}! • AI-Powered Companion
                 </p>
               </div>
             </div>

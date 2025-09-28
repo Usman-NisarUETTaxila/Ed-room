@@ -54,18 +54,28 @@ const MessageFormatter = ({ message, isUser = false }) => {
       pretty = String(obj);
     }
     return (
-      <pre className="text-xs md:text-sm leading-relaxed whitespace-pre-wrap bg-gray-50 border border-gray-200 rounded-md p-3 overflow-x-auto">
+      <pre className="text-xs md:text-sm leading-relaxed whitespace-pre-wrap bg-gray-900 text-green-400 border border-gray-300 rounded-lg p-4 overflow-x-auto shadow-inner font-mono">
         {pretty}
       </pre>
     );
   };
 
-  // Function to parse and format text with markdown-like syntax
+  // Enhanced function to parse and format text with better structure and line breaks
   const formatText = (text) => {
     if (!text) return '';
     
-    // Split text by double newlines to create sections
-    const sections = text.split('\n\n');
+    // First, normalize line breaks and ensure proper spacing around headings
+    let normalizedText = text
+      // Ensure headings start on new lines
+      .replace(/([.!?])\s*(\*\*[^*]+\*\*)/g, '$1\n\n$2')
+      // Ensure sections are properly separated
+      .replace(/(\*\*[^*]+\*\*)\s*([^\n*])/g, '$1\n\n$2')
+      // Clean up multiple consecutive newlines
+      .replace(/\n{3,}/g, '\n\n')
+      .trim();
+    
+    // Split text by double newlines to create sections with better spacing
+    const sections = normalizedText.split('\n\n');
     
     return sections.map((section, sectionIndex) => {
       // If the whole section looks like JSON (possibly inside code fences), pretty print it
@@ -73,27 +83,33 @@ const MessageFormatter = ({ message, isUser = false }) => {
       const parsed = tryParseJSON(candidate);
       if (parsed !== null) {
         return (
-          <div key={sectionIndex} className={sectionIndex > 0 ? 'mt-4' : ''}>
+          <div key={sectionIndex} className={sectionIndex > 0 ? 'mt-6' : ''}>
             {renderJSONBlock(parsed)}
           </div>
         );
       }
 
-      // Otherwise, split each section by single newlines
+      // Check if this section is a main heading (starts with **)
+      const isMainSection = section.trim().startsWith('**');
+      const isHeadingSection = /^\*\*[^*]+\*\*$/.test(section.trim());
+      
+      // Split each section by single newlines
       const lines = section.split('\n');
 
       return (
-        <div key={sectionIndex} className={sectionIndex > 0 ? 'mt-4' : ''}>
+        <div key={sectionIndex} className={`${
+          sectionIndex > 0 ? (isMainSection ? 'mt-8' : 'mt-5') : ''
+        } ${isMainSection && !isHeadingSection ? 'bg-gray-50 p-4 rounded-lg border-l-4 border-blue-500' : ''}`}>
           {lines.map((line, lineIndex) => {
             if (!line.trim()) return null;
 
             // Horizontal separator
             if (line.trim().startsWith('===')) {
-              return <div key={lineIndex} className="my-4 border-t border-gray-200"></div>;
+              return <div key={lineIndex} className="my-6 border-t-2 border-gray-300"></div>;
             }
 
             return (
-              <div key={lineIndex} className={lineIndex > 0 ? 'mt-2' : ''}>
+              <div key={lineIndex}>
                 {formatLine(line)}
               </div>
             );
@@ -103,31 +119,78 @@ const MessageFormatter = ({ message, isUser = false }) => {
     });
   };
 
-  // Function to format individual lines with bold, emojis, and special formatting
+  // Function to format individual lines with enhanced formatting and proper line breaks
   const formatLine = (line) => {
     const trimmed = line.trim();
 
-    // Simple list items: - item or * item
-    if (/^[-*]\s+/.test(trimmed)) {
+    // Enhanced heading detection for **Bold Headings**
+    if (/^\*\*[^*]+\*\*$/.test(trimmed)) {
+      const headingText = trimmed.replace(/\*\*/g, '');
       return (
-        <div className="text-sm leading-relaxed flex">
-          <span className="mr-2">•</span>
-          <span>{trimmed.replace(/^[-*]\s+/, '')}</span>
+        <div className="text-xl font-bold text-gray-900 mt-8 mb-4 pb-3 border-b-2 border-blue-200 bg-gradient-to-r from-blue-50 to-transparent p-3 rounded-lg">
+          {headingText}
         </div>
       );
     }
 
-    // Headings: lines that end with a colon and are reasonably short
+    // Sub-headings: **Text** within other content
+    if (trimmed.includes('**') && !(/^\*\*[^*]+\*\*$/.test(trimmed))) {
+      return (
+        <div className="text-sm leading-relaxed mt-3 mb-2">
+          {formatWithMarkdown(line)}
+        </div>
+      );
+    }
+
+    // Numbered list items: 1. item, 2. item, etc.
+    if (/^\d+\.\s+/.test(trimmed)) {
+      const match = trimmed.match(/^(\d+)\.(\s+)(.*)/);
+      if (match) {
+        return (
+          <div className="text-sm leading-relaxed flex items-start mt-3 mb-1 pl-2">
+            <span className="font-bold text-blue-600 mr-3 min-w-[24px] bg-blue-100 rounded-full w-6 h-6 flex items-center justify-center text-xs">
+              {match[1]}
+            </span>
+            <span className="flex-1 pt-0.5">{formatWithMarkdown(match[3])}</span>
+          </div>
+        );
+      }
+    }
+
+    // Simple list items: - item or * item or • item
+    if (/^[-*•]\s+/.test(trimmed)) {
+      return (
+        <div className="text-sm leading-relaxed flex items-start mt-2 mb-1 pl-2">
+          <span className="text-blue-500 mr-3 mt-1.5 font-bold">•</span>
+          <span className="flex-1">{formatWithMarkdown(trimmed.replace(/^[-*•]\s+/, ''))}</span>
+        </div>
+      );
+    }
+
+    // Section headings: lines that end with a colon
     if (/^[^:]{2,80}:$/.test(trimmed)) {
-      return <div className="text-sm md:text-base font-semibold text-gray-800 mt-3">{trimmed}</div>;
+      return (
+        <div className="text-base font-bold text-gray-800 mt-6 mb-3 pb-1 border-b border-gray-300">
+          {trimmed}
+        </div>
+      );
     }
 
     // Markdown-like bold support
     if (line.includes('**') || line.includes('*')) {
-      return formatWithMarkdown(line);
+      return (
+        <div className="text-sm leading-relaxed mt-2 mb-1">
+          {formatWithMarkdown(line)}
+        </div>
+      );
     }
 
-    return <span className="text-sm leading-relaxed">{line}</span>;
+    // Regular text with proper spacing
+    return (
+      <div className="text-sm leading-relaxed mt-2 mb-1">
+        {line}
+      </div>
+    );
   };
 
   // Function to handle markdown-like formatting
